@@ -19,7 +19,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.json(req.session.userId || "no user");
+  res.json(process.env.FOO || "no FOO env");
 });
 app.post("/sessions", (req, res, next) => {
   req.session.userId = "logged in";
